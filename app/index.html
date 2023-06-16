@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="index.css" media="screen" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <title>Campo de Busca</title>
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <form>
+            <div class="input-group mb-3">
+              <input
+                id="busca"
+                type="text"
+                class="form-control"
+                placeholder="Digite sua busca..."
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn btn-primary"
+                  type="submit"
+                  onclick="adicionarResultado(event)"
+                >
+                  Buscar
+                </button>
+              </div>
+            </div>
+          </form>
+          <div class="resultado">
+            <h3 class="resultado-title">Resultados:</h3>
+            <ul id="lista-resultados"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function adicionarResultado(event) {
+        event.preventDefault();
+        var busca = document.getElementById("busca").value;
+        if (busca.trim() === "") {
+          alert("Digite algo na busca.");
+          return;
+        }
+        var listaResultados = document.getElementById("lista-resultados");
+        var novoItem = document.createElement("li");
+        novoItem.textContent = busca;
+        listaResultados.appendChild(novoItem);
+        document.getElementById("busca").value = "";
+      }
+    </script>
+  </body>
+</html>

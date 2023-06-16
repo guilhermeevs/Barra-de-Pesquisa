@@ -1,0 +1,26 @@
+.resultado {
+  margin-top: 20px;
+  border: 1px solid #435a8a;
+  padding: 8px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.resultado-title {
+  margin-bottom: 20px;
+}
+
+.dark-theme {
+  background-color: #202020;
+  color: #fff;
+}
+
+.resultado {
+  max-height: 200px;
+  overflow-y: auto;
+}
